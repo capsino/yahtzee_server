@@ -6,7 +6,7 @@ cid=$(docker run \
   --publish 4567:4567 \
   jj/sparkexample)
 
-ip=locahost
+ip=$(docker inspect ${cid} | grep IPAddress | cut -d '"' -f 4)
 port=4567
 address=http://${ip}:${port}
 echo ${address}
