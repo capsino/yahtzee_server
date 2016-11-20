@@ -57,7 +57,7 @@
               </descriptorRefs>
               <archive>
                 <manifest>
-                  <mainClass>sparkexample.Hello</mainClass>
+                  <mainClass>sparkexample.Service</mainClass>
                 </manifest>
               </archive>
             </configuration>

@@ -2,11 +2,11 @@ package sparkexample;
 
 import static spark.Spark.get;
 
-public class Hello {
+public class Service {
 
     public static void main(String[] args) {
         get("/", (req, res) -> {
-            return "Hello from sparkjava.com";
+            return Greeting.message();
         });
     }
 }
