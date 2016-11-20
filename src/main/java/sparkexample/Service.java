@@ -6,7 +6,7 @@ public class Service {
 
     public static void main(String[] args) {
         get("/", "application/json", (req, res) -> {
-            return quoted(Greeting.message());
+            return "{" + quoted("message") + ":" + quoted(Greeting.message()) + "}";
         });
     }
 

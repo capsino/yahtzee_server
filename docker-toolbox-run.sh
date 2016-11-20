@@ -14,6 +14,6 @@ echo ${address}
 # crude way to wait till container is up
 sleep 2
 
-curl ${address}
+curl --include --header "Accept: application/json" ${address}
 echo
 docker rm --force ${cid} > /dev/null
