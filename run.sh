@@ -3,15 +3,17 @@
 cid=$(docker run \
   --detach \
   --name spark \
-  --publish-all \
+  --publish 4567:4567 \
   jj/sparkexample)
 
 ip=$(docker-machine ip default)
-port=$(docker port ${cid} | awk '{split($0, a, ":"); print a[2]}')
+port=4567
 address=http://${ip}:${port}
 echo ${address}
 
+# crude way to wait till container is up
 sleep 2
+
 curl ${address}
 echo
 docker rm --force ${cid} > /dev/null
