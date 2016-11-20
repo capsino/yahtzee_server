@@ -1,6 +1,7 @@
 #!/bin/bash
 
-docker build --tag jj/sparkexample .
+my_dir="$( cd "$( dirname "${0}" )" && pwd )"
+docker-compose --file ${my_dir}/docker-compose.yml build
 status=$?
 
 # if the build fails Docker removes all intermediate containers except the one for
