@@ -32,7 +32,7 @@
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
-              <mainClass>sparkexample.Hello</mainClass>
+              <mainClass>sparkexample.Service</mainClass>
               <classpathPrefix>dependency-jars/</classpathPrefix>
             </manifest>
           </archive>
