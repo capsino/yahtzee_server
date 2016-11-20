@@ -3,6 +3,6 @@ package sparkexample;
 public class Greeting {
 
     public static String message() {
-        return "Hello from sparkjava.com";
+        return "Hello from http://sparkjava.com";
     }
 }

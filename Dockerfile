@@ -11,7 +11,7 @@ ADD pom.xml /code/pom.xml
 RUN ["mvn", "dependency:resolve"]
 RUN ["mvn", "verify"]
 
-# Adding source, compile and package into a fat jar
+# Add source (includes tests), compile, run tests, package into jar
 ADD src /code/src
 RUN ["mvn", "package"]
 
