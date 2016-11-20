@@ -1,14 +1,11 @@
-FROM java:8
-
-# Install maven
-RUN apt-get update
-RUN apt-get install -y maven
+FROM maven:3.3.9-jdk-8-alpine
+MAINTAINER Jon Jagger <jon@jaggersoft.com>
 
 ARG work_dir=/usr/src/app
 WORKDIR ${work_dir}
 
 # Prepare by downloading dependencies
-ADD pom.xml ${work_dir}/pom.xml
+COPY pom.xml ${work_dir}/pom.xml
 RUN ["mvn", "dependency:resolve"]
 RUN ["mvn", "verify"]
 
@@ -17,4 +14,4 @@ COPY . ${work_dir}
 RUN ["mvn", "package"]
 
 EXPOSE 4567
-CMD ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "target/sparkexample-jar-with-dependencies.jar"]
+CMD [ "java", "-jar", "target/sparkexample-jar-with-dependencies.jar"]

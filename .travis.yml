@@ -12,6 +12,7 @@ before_install:
     - docker-compose --version
 
 script:
+    - docker pull maven:3.3.9-jdk-8-alpine
     - ./build-image.sh
     - ./run.sh
 
