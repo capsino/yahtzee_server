@@ -6,7 +6,7 @@ cid=$(docker run \
   --publish 4567:4567 \
   jj/sparkexample)
 
-ip=locahost
+ip=$(docker-machine ip default)
 port=4567
 address=http://${ip}:${port}
 echo ${address}
