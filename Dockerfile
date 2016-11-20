@@ -4,15 +4,16 @@ FROM java:8
 RUN apt-get update
 RUN apt-get install -y maven
 
-WORKDIR /code
+ARG work_dir=/usr/src/app
+WORKDIR ${work_dir}
 
 # Prepare by downloading dependencies
-ADD pom.xml /code/pom.xml
+ADD pom.xml ${work_dir}/pom.xml
 RUN ["mvn", "dependency:resolve"]
 RUN ["mvn", "verify"]
 
 # Add source (includes tests), compile, run tests, package into jar
-ADD src /code/src
+COPY . ${work_dir}
 RUN ["mvn", "package"]
 
 EXPOSE 4567
