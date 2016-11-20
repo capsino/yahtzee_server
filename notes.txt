@@ -4,3 +4,18 @@ http://stackoverflow.com/questions/71069/can-maven-be-made-less-verbose
 https://hub.docker.com/r/_/maven/
 http://blog.takipi.com/running-java-on-docker-youre-breaking-the-law/
 http://mvnrepository.com/open-source
+
+
+https://github.com/perwendel/spark
+
+
+    <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+    <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>2.8.0</version>
+    </dependency>
+
+Here’s the example of transforming the output into a json object.
+Gson gson = new Gson();
+get("/hello", (request, response) -> "Hello World", gson::toJson);
