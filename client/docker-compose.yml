@@ -2,7 +2,9 @@
 version: '2'
 
 services:
-  spark:
+  spark_client:
     image: jj/spark_client
+    container_name: spark_client
+    ports: [ "80:80" ]
     build:
       context: .

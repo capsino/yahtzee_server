@@ -5,11 +5,11 @@ import org.junit.Test;
 
 public class GreetingTest {
 
-  @Test
-  public void message_contains_spark_url() {
-    String actual = Greeting.message();
-    String url = "http://sparkjava.com";
-    assertTrue(actual.contains(url));
-  }
+    @Test
+    public void message_from_server_on_port_4567() {
+        String actual = Greeting.message();
+        String expected = "Hello from spark_server on port 4567";
+        assertEquals(expected, actual);
+    }
 
 }

@@ -13,5 +13,5 @@ RUN ["mvn", "verify"]
 COPY . ${work_dir}
 RUN ["mvn", "--quiet", "package"]
 
-EXPOSE 4567
+EXPOSE 80
 CMD [ "java", "-jar", "target/sparkexample-jar-with-dependencies.jar" ]

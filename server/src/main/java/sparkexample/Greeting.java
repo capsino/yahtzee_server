@@ -8,6 +8,6 @@ public class Greeting {
 
         HttpGet httpget = new HttpGet("http://httpbin.org/");
 
-        return "Hello from http://sparkjava.com";
+        return "Hello from spark_server on port 4567";
     }
 }
