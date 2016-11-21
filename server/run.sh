@@ -1,18 +1,12 @@
 #!/bin/bash
 
-cid=$(docker run \
-  --detach \
-  --name spark_server \
-  --publish 4567:4567 \
-  jj/sparkexample)
-
-ip=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' ${cid})
+my_dir="$( cd "$( dirname "${0}" )" && pwd )"
+docker-compose --file ${my_dir}/docker-compose.yml down
+docker-compose --file ${my_dir}/docker-compose.yml up -d
+ip=$(docker-machine ip default)
 port=4567
 address=http://${ip}:${port}
 echo ${address}
-
-# crude way to wait till container is up
-sleep 3
+sleep 3 # crude way to wait till container is up
 curl --include --header "Accept: application/json" ${address}
 echo
-docker rm --force ${cid} > /dev/null
