@@ -1,9 +1,9 @@
 #!/bin/bash
 
 my_dir="$( cd "$( dirname "${0}" )" && pwd )"
-docker-compose --file ${my_dir}/docker-compose.yml down
+docker-compose --file ${my_dir}/docker-compose.ymldown
 docker-compose --file ${my_dir}/docker-compose.yml up -d
-ip=$(docker-machine ip default)
+ip=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' spark_server)
 port=4567
 address=http://${ip}:${port}
 echo ${address}

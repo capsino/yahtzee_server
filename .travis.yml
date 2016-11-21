@@ -13,6 +13,7 @@ before_install:
 
 script:
     - docker pull maven:3.3.9-jdk-8-alpine
+    - cd server
     - ./build-image.sh
     - ./run.sh
 
