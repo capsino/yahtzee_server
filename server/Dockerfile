@@ -6,8 +6,8 @@ WORKDIR ${work_dir}
 
 # Prepare by downloading dependencies
 COPY pom.xml ${work_dir}/pom.xml
-RUN ["mvn", "dependency:resolve"]
-RUN ["mvn", "verify"]
+RUN ["mvn", "--quiet", "dependency:resolve"]
+RUN ["mvn", "--quiet", "verify"]
 
 # Add source (includes tests), compile, run tests, package into jar
 COPY . ${work_dir}
