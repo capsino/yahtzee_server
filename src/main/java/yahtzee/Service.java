@@ -9,8 +9,7 @@ public class Service {
     public static void main(String[] args) {
         get("/", "application/json", (req, res) -> {
             HashMap<String,Object> result = new HashMap<String,Object>();
-//           result.put( "roll", RandomDiceRoll.roll() );
-           result.put( "roll", 6);
+           result.put( "roll", RandomDiceRoll.roll() );
             return new Gson().toJson(result);
         });
     }
