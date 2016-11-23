@@ -3,7 +3,7 @@ version: '2'
 
 services:
   spark_server:
-    image: capsino/yahtzee_server
+    image: shaunhanson/capsino
     container_name: yahtzee_server
     ports: [ "4567:4567" ]
     build:
