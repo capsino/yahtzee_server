@@ -3,8 +3,8 @@ version: '2'
 
 services:
   spark_server:
-    image: jj/spark_server
-    container_name: spark_server
+    image: capsino/yahtzee_server
+    container_name: yahtzee_server
     ports: [ "4567:4567" ]
     build:
       context: .
