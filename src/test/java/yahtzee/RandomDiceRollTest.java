@@ -1,25 +1,16 @@
-package sparkexample;
+package yahtzee;
 
-import static junit.framework.Assert.*;
+import static org.junit.Assert.*;
+
 import org.junit.Test;
-
-import com.google.gson.Gson;
-import java.util.Map;
-import java.util.HashMap;
 
 public class RandomDiceRollTest {
 
-  @Test
-  public void example_of_hash_to_json_to_hash_round_trip() {
-      Gson gson = new Gson();
-      Map<String,Object> src = new HashMap<String,Object>();
-      src.put( "brand", "Jeep" );
-      src.put( "doors", 3 );
-      String json = gson.toJson(src);
-
-      Map args = (Map)gson.fromJson(json, Object.class);
-      assertEquals("Jeep", args.get("brand"));
-      assertEquals(3.0, args.get("doors"));
-  }
+	@Test
+	public void roll_returns_number_between_1_and_6() {
+		
+		int output = RandomDiceRoll.roll();
+		
+	}
 
 }
