@@ -13,7 +13,7 @@ public class Service {
             for(int i=0; i < 5; i++) {
             	rolls[i] = RandomDiceRoll.roll();
             }
-            result.put( "roll", rolls );
+            result.put( "roll", RandomDiceRoll.roll() );
             return new Gson().toJson(result);
         });
     }
